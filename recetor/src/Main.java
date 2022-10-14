@@ -1,15 +1,16 @@
-import com.fazecast.jSerialComm.*;
+import com.fazecast.jSerialComm.SerialPort;
+
+import java.util.Arrays;
+import java.util.Scanner;
 
 import static java.lang.System.exit;
-import java.io.IOException;
-import java.util.Scanner;
 
 // ERROR CODE LIBRARY
 // CODE 101 -> NO AVAILABLE COM PORTS
 // CODE 102 -> CAN'T CONNECT TO CHOSEN PORT
 
 public class Main {
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) /*throws IOException, InterruptedException */{
         SerialPort[] ports = SerialPort.getCommPorts();
 
         if (ports.length != 0) {
@@ -43,17 +44,29 @@ public class Main {
                 while (true)
                 {
                     while (serialPort.bytesAvailable() == 0)
-                        Thread.sleep(20);
+                        Thread.sleep(10);
 
-                    byte[] readBuffer = new byte[serialPort.bytesAvailable()];
+                    byte[] readBuffer = new byte[10];
                     int bytesRead = serialPort.readBytes(readBuffer, readBuffer.length);
                     System.out.println("Bytes: " + bytesRead + " bytes");
-                    System.out.println(readBuffer);
+                    System.out.println(Arrays.toString(readBuffer));
+
+                    String temp = new String(readBuffer);
+                    System.out.println(temp);
+                    //System.out.println(Arrays.toString(readBuffer).getClass());
+
+                    /* BufferedImage image = ImageIO.read(new File("C:/Users/luisa/Downloads/benfica.png"));
+                    ByteArrayOutputStream outStreamObj = new ByteArrayOutputStream();
+                    ImageIO.write(image,"png",outStreamObj);
+                    byte[] byteArray = outStreamObj.toByteArray();
+
+                    ByteArrayInputStream inStreambj = new ByteArrayInputStream(byteArray);
+                    BufferedImage newImage = ImageIO.read(inStreambj);
+                    ImageIO.write(newImage,"png",new File("output.png")); */
                 }
             } catch (Exception e) { e.printStackTrace(); }
             serialPort.closePort();
         }
-
         else {
             System.out.println("ERROR: No COM ports available");
             exit(101);

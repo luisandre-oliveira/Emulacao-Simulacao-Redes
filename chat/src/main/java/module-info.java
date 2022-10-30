@@ -10,6 +10,7 @@ module com.emulacao.chat {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.fazecast.jSerialComm;
+    requires java.desktop;
 
     opens com.emulacao.chat to javafx.fxml;
     exports com.emulacao.chat;

@@ -2,18 +2,22 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
 <GridPane maxHeight="456" maxWidth="700" minHeight="456" minWidth="700" prefHeight="456.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.emulacao.chat.Controller">
   <columnConstraints>
-      <ColumnConstraints />
-    <ColumnConstraints hgrow="NEVER" maxWidth="600.0" minWidth="10.0" prefWidth="68.0" />
+      <ColumnConstraints maxWidth="22.0" minWidth="9.0" prefWidth="9.0" />
+    <ColumnConstraints hgrow="NEVER" maxWidth="600.0" minWidth="10.0" prefWidth="17.0" />
     <ColumnConstraints hgrow="NEVER" maxWidth="600.0" minWidth="10.0" prefWidth="594.0" />
       <ColumnConstraints hgrow="NEVER" maxWidth="295.0" minWidth="0.0" prefWidth="144.0" />
       <ColumnConstraints hgrow="NEVER" maxWidth="295.0" minWidth="10.0" prefWidth="144.0" />
@@ -27,7 +31,7 @@
       <RowConstraints maxHeight="205.0" minHeight="10.0" prefHeight="19.0" vgrow="NEVER" />
   </rowConstraints>
    <children>
-      <TextArea fx:id="chat" editable="false" prefHeight="278.0" prefWidth="530.0" promptText="Aqui irá aparecer o chat..." text="&#10;" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <TextArea fx:id="chat" editable="false" prefHeight="288.0" prefWidth="535.0" promptText="Aqui irá aparecer o chat..." text="&#10;" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
       <TextArea fx:id="submit" prefHeight="66.0" prefWidth="456.0" promptText="Escreva a sua mensagem aqui..." GridPane.columnIndex="2" GridPane.rowIndex="4" />
       <Button mnemonicParsing="false" onAction="#enviar" prefHeight="55.0" prefWidth="56.0" text="Enviar " wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
          <GridPane.margin>
@@ -43,7 +47,7 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" onAction="#close" />
+              <MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
@@ -58,5 +62,75 @@
           </Menu>
         </menus>
       </MenuBar>
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+         <children>
+            <ComboBox maxHeight="1.7976931348623157E308" prefHeight="18.0" prefWidth="150.0">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </ComboBox>
+            <ComboBox maxHeight="1.7976931348623157E308" prefHeight="18.0" prefWidth="150.0">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </ComboBox>
+            <ComboBox maxHeight="1.7976931348623157E308" prefHeight="18.0" prefWidth="150.0">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </ComboBox>
+            <ComboBox maxHeight="1.7976931348623157E308" prefHeight="18.0" prefWidth="150.0">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </ComboBox>
+            <ComboBox maxHeight="1.7976931348623157E308" prefHeight="18.0" prefWidth="150.0">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </ComboBox>
+            <ProgressBar prefWidth="200.0" progress="0.0">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </ProgressBar>
+         </children>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" />
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+         <children>
+            <Label text="COM PORTS">
+               <VBox.margin>
+                  <Insets left="5.0" top="26.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="BAUD RATE">
+               <VBox.margin>
+                  <Insets left="5.0" top="26.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="DATA BITS">
+               <VBox.margin>
+                  <Insets left="5.0" top="26.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="STOP BITS">
+               <VBox.margin>
+                  <Insets left="5.0" top="26.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="PARITY">
+               <VBox.margin>
+                  <Insets left="5.0" top="26.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="ESTADO">
+               <VBox.margin>
+                  <Insets left="5.0" top="26.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+      <VBox layoutX="568.0" layoutY="77.0" prefHeight="200.0" prefWidth="100.0" />
    </children>
 </GridPane>

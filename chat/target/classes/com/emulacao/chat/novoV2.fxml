@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane maxHeight="456" maxWidth="700" minHeight="456" minWidth="700" prefHeight="456.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.emulacao.chat.Controller">
+<GridPane maxHeight="456" maxWidth="700" minHeight="456" minWidth="700" prefHeight="456.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.emulacao.chat.ProgFinal">
   <columnConstraints>
       <ColumnConstraints maxWidth="22.0" minWidth="9.0" prefWidth="9.0" />
     <ColumnConstraints hgrow="NEVER" maxWidth="600.0" minWidth="10.0" prefWidth="17.0" />
@@ -33,12 +33,12 @@
    <children>
       <TextArea fx:id="chat" editable="false" prefHeight="288.0" prefWidth="535.0" promptText="Aqui irá aparecer o chat..." text="&#10;" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
       <TextArea fx:id="submit" prefHeight="66.0" prefWidth="456.0" promptText="Escreva a sua mensagem aqui..." GridPane.columnIndex="2" GridPane.rowIndex="4" />
-      <Button fx:id="bEnviar" mnemonicParsing="false" onAction="#enviar" prefHeight="55.0" prefWidth="56.0" text="Enviar " wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+      <Button fx:id="enviar" mnemonicParsing="false" onAction="#sendMessage" prefHeight="55.0" prefWidth="56.0" text="Enviar " wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
          <GridPane.margin>
             <Insets />
          </GridPane.margin>
       </Button>
-      <Button fx:id="butone" mnemonicParsing="false" onAction="#connect" prefHeight="55.0" prefWidth="56.0" text="Ligar" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+      <Button fx:id="ligar" mnemonicParsing="false" onAction="#botaoLigar" prefHeight="55.0" prefWidth="56.0" text="Ligar" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
          <GridPane.margin>
             <Insets />
          </GridPane.margin>
@@ -52,8 +52,8 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Anexar">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#anexar" text="Enviar .txt" />
-                  <MenuItem mnemonicParsing="false" onAction="#anexarI" text="Enviar Imagem" />
+              <MenuItem mnemonicParsing="false" onAction="#sendFile" text="Enviar .txt" />
+                  <MenuItem mnemonicParsing="false" onAction="#sendFile" text="Enviar Imagem" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
@@ -65,7 +65,7 @@
       </MenuBar>
       <VBox prefHeight="288.0" prefWidth="93.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
          <children>
-            <ComboBox fx:id="Xporta" maxHeight="1.7976931348623157E308" prefHeight="18.0" prefWidth="150.0">
+            <ComboBox fx:id="portList" maxHeight="1.7976931348623157E308" prefHeight="18.0" prefWidth="150.0">
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin>

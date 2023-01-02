@@ -11,6 +11,7 @@ module com.emulacao.chat {
     requires eu.hansolo.tilesfx;
     requires com.fazecast.jSerialComm;
     requires java.desktop;
+    requires org.jetbrains.annotations;
 
     opens com.emulacao.chat to javafx.fxml;
     exports com.emulacao.chat;
